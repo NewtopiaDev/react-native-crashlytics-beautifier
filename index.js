@@ -1,6 +1,2 @@
-
-import { NativeModules } from 'react-native';
-
-const { RNStackBeautifier } = NativeModules;
-
-export default RNStackBeautifier;
+import {NativeModules} from 'react-native';
+module.exports = NativeModules.RNStackBeautifier;
