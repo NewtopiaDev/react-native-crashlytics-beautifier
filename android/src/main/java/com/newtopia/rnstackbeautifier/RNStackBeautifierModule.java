@@ -1,5 +1,5 @@
 
-package com.reactlibrary;
+package com.newtopia.rnstackbeautifier;
 
 import android.widget.Toast;
 
