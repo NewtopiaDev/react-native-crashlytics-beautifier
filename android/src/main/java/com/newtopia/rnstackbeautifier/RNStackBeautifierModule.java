@@ -32,14 +32,8 @@ public class RNStackBeautifierModule extends ReactContextBaseJavaModule {
         return "RNStackBeautifier";
     }
 
-    // @ReactMethod
-    // public void show(String message, int duration) {
-    //     Toast.makeText(getReactApplicationContext(), message, duration).show();
-    // }
-
     @ReactMethod
     public void recordException(String title, ReadableArray frameArray, boolean isFatal) {
-        Log.d("recordException 1", title + "/n" + frameArray + "/n" + isFatal);
         StackTraceElement[] stackTrace = new StackTraceElement[frameArray.size()];
         for (int i = 0; i < frameArray.size(); i++) {
             ReadableMap map = frameArray.getMap(i);
@@ -56,8 +50,6 @@ public class RNStackBeautifierModule extends ReactContextBaseJavaModule {
         JavascriptException jse = new JavascriptException(JSStackTrace.format(title,frameArray));
         jse.setStackTrace(stackTrace);
         if(isFatal){
-            Log.d("Crashlytics", "isFatal" + jse);
-            Crashlytics.logException(jse);
             throw jse;
         }else{
             Crashlytics.logException(jse);
