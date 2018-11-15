@@ -1,10 +1,10 @@
 
-#import "RNStackBeautifier.h"
+#import "RNCrashlyticsBeautifier.h"
 #import <React/RCTLog.h>
 #import <Crashlytics/Crashlytics.h>
 #import <Crashlytics/CLSStackFrame.h>
 
-@implementation RNStackBeautifier
+@implementation RNCrashlyticsBeautifier
 
 - (dispatch_queue_t)methodQueue
 {

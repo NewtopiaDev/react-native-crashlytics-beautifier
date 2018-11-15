@@ -1,13 +1,13 @@
 
-# react-native-stack-beautifier
+# react-native-crashlytics-beautifier
 
 ## Getting started
 
-`$ npm install react-native-stack-beautifier --save`
+`$ npm install react-native-crashlytics-beautifier --save`
 
 ### Mostly automatic installation
 
-`$ react-native link react-native-stack-beautifier`
+`$ react-native link react-native-crashlytics-beautifier`
 
 ### Manual installation
 
@@ -15,39 +15,29 @@
 #### iOS
 
 1. In XCode, in the project navigator, right click `Libraries` ➜ `Add Files to [your project's name]`
-2. Go to `node_modules` ➜ `react-native-stack-beautifier` and add `RNStackBeautifier.xcodeproj`
-3. In XCode, in the project navigator, select your project. Add `libRNStackBeautifier.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
+2. Go to `node_modules` ➜ `react-native-crashlytics-beautifier` and add `RNCrashlyticsBeautifier.xcodeproj`
+3. In XCode, in the project navigator, select your project. Add `libRNCrashlyticsBeautifier.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
 #### Android
 
 1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.newtopia.rnstackbeautifier.RNStackBeautifierPackage;` to the imports at the top of the file
-  - Add `new RNStackBeautifierPackage()` to the list returned by the `getPackages()` method
+  - Add `import com.newtopia.rncrashlyticsbeautifier.RNCrashlyticsBeautifierPackage;` to the imports at the top of the file
+  - Add `new RNCrashlyticsBeautifierPackage()` to the list returned by the `getPackages()` method
 2. Append the following lines to `android/settings.gradle`:
   	```
-  	include ':react-native-stack-beautifier'
-  	project(':react-native-stack-beautifier').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-stack-beautifier/android')
+  	include ':react-native-crashlytics-beautifier'
+  	project(':react-native-crashlytics-beautifier').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-crashlytics-beautifier/android')
   	```
 3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
   	```
-      compile project(':react-native-stack-beautifier')
+      compile project(':react-native-crashlytics-beautifier')
   	```
-
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
-
-1. In Visual Studio add the `RNStackBeautifier.sln` in `node_modules/react-native-stack-beautifier/windows/RNStackBeautifier.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Stack.Beautifier.RNStackBeautifier;` to the usings at the top of the file
-  - Add `new RNStackBeautifierPackage()` to the `List<IReactPackage>` returned by the `Packages` method
-
 
 ## Usage
 ```javascript
-import RNStackBeautifier from 'react-native-stack-beautifier';
+import RNCrashlyticsBeautifier from 'react-native-crashlytics-beautifier';
 
-// TODO: What to do with the module?
-RNStackBeautifier;
+RNCrashlyticsBeautifier.init();
 ```
   

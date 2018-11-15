@@ -18,7 +18,7 @@ module.exports = {
         var originalHandler = global.ErrorUtils.getGlobalHandler();
         function errorHandler(e, isFatal) {
             let parsedStack = parseErrorStack(e);
-            let a = NativeModules.RNStackBeautifier.recordException(e.message, parsedStack, isFatal); 
+            let a = NativeModules.RNCrashlyticsBeautifier.recordException(e.message, parsedStack, isFatal); 
         }
         global.ErrorUtils.setGlobalHandler(errorHandler);
     }

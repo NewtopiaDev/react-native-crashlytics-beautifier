@@ -5,7 +5,7 @@
 #import <React/RCTBridgeModule.h>
 #endif
 
-@interface RNStackBeautifier : NSObject <RCTBridgeModule>
+@interface RNCrashlyticsBeautifier : NSObject <RCTBridgeModule>
 
 @end
   

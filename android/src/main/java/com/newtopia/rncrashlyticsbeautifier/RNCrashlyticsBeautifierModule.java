@@ -1,5 +1,5 @@
 
-package com.newtopia.rnstackbeautifier;
+package com.newtopia.rncrashlyticsbeautifier;
 
 import android.widget.Toast;
 import android.util.Log;
@@ -18,18 +18,18 @@ import com.crashlytics.android.Crashlytics;
 import java.util.Map;
 import java.util.HashMap;
 
-public class RNStackBeautifierModule extends ReactContextBaseJavaModule {
+public class RNCrashlyticsBeautifierModule extends ReactContextBaseJavaModule {
 
   private final ReactApplicationContext reactContext;
 
-    public RNStackBeautifierModule(ReactApplicationContext reactContext) {
+    public RNCrashlyticsBeautifierModule(ReactApplicationContext reactContext) {
         super(reactContext);
         this.reactContext = reactContext;
     }
 
     @Override
     public String getName() {
-        return "RNStackBeautifier";
+        return "RNCrashlyticsBeautifier";
     }
 
     @ReactMethod
