@@ -34,10 +34,28 @@
       compile project(':react-native-crashlytics-beautifier')
   	```
 
-## Usage
+# Usage
 ```javascript
 import RNCrashlyticsBeautifier from 'react-native-crashlytics-beautifier';
-
+```
+---
+### Initialize RNCrashlyticsBeautifier to catch all fatal exceptions and log stack trace to crashlytics
+```
 RNCrashlyticsBeautifier.init();
 ```
-  
+---
+### Manually Log stack trace of any exception to crashlytics
+#### Arguments
+| arg     | type    | description                              |
+|---------|---------|------------------------------------------|
+| error   | Error   | Error object to log to crashlytics       |
+| isFatal | Boolean | True for fatal exception and false for non-fatal exception |
+|         |         |                                          |
+```
+RNCrashlyticsBeautifier.log(error, isFatal)
+```
+# Examples
+```
+const error = new Error('Invalid Response')
+RNCrashlyticsBeautifier.log(error, false)
+```
