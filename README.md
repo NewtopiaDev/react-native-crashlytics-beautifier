@@ -9,6 +9,8 @@
 
 `$ react-native link react-native-crashlytics-beautifier`
 
+Add `pod 'react-native-crashlytics-beautifier', :path => '../node_modules/react-native-crashlytics-beautifier'` into your podfile and execute `pod install`
+
 ### Manual installation
 
 
@@ -46,11 +48,11 @@ RNCrashlyticsBeautifier.init();
 ---
 ### Manually Log stack trace of any exception to crashlytics
 #### Arguments
-| arg     | type    | description                              |
-|---------|---------|------------------------------------------|
-| error   | Error   | Error object to log to crashlytics       |
+| arg     | type    | description                                                |
+| ------- | ------- | ---------------------------------------------------------- |
+| error   | Error   | Error object to log to crashlytics                         |
 | isFatal | Boolean | True for fatal exception and false for non-fatal exception |
-|         |         |                                          |
+|         |         |                                                            |
 ```
 RNCrashlyticsBeautifier.log(error, isFatal)
 ```
