@@ -2,7 +2,7 @@ require 'json'
 package_json = JSON.parse(File.read('package.json'))
 
 Pod::Spec.new do |s|
-  s.name         = "RNCrashlyticsBeautifier"
+  s.name         = "react-native-crashlytics-beautifier"
   s.version      = package_json["version"]
   s.summary      = "RNCrashlyticsBeautifier"
   s.description  = "DESC RNCrashlyticsBeautifier"
