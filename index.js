@@ -26,8 +26,20 @@ module.exports = {
         }
         global.ErrorUtils.setGlobalHandler(errorHandler);
     },
-    log: function (e, isFatal) {
-        let parsedStack = parseErrorStack(e);
-        NativeModules.RNCrashlyticsBeautifier.recordException(e.message, parsedStack, isFatal);
-    }
+    log: function(e, isFatal = false) {
+        const parsedStack = parseErrorStack(e)
+        const filteredStack = []
+        if (parsedStack) {
+          parsedStack.forEach(item => {
+            if (item.lineNumber && item.column && item.methodName) {
+              filteredStack.push(item)
+            }
+          })
+        }
+        NativeModules.RNCrashlyticsBeautifier.recordException(
+          e.message || '',
+          filteredStack,
+          isFatal
+        )
+    },
 } 
